@@ -6,4 +6,6 @@ class User < ApplicationRecord
   has_many :followeds, through: :inverse_followings
   validates :username, presence: true, uniqueness: true
   validates :full_name, presence: true
+  has_one_attached :photo
+  has_one_attached :cover_image
 end
