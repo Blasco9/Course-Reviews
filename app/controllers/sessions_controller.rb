@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       login @user
       redirect_to @user, notice: 'Logged in successfuly'
     else
-      redirect_to :login, notice: 'Invalid user name'
+      render :new, notice: 'Invalid user name'
     end
   end
 

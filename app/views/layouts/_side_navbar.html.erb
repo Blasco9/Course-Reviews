@@ -1,0 +1,34 @@
+<aside class="col-2 side-navbar p-0">
+  <nav>
+    <div>
+      <div class="img-name-container">
+        <img src="<%= url_for current_user.photo %>" class="nav-picture">
+        <span class="text-uppercase"><%= current_user.full_name %></span>
+      </div>
+      <div class="d-flex text-center">
+        <div class="nav-following-container">
+          <p class="text-white font-weight-bold"><%= current_user.followeds.count %></p>
+          <p>Following</p>
+        </div>
+        <div class="nav-followers-container">
+          <p class="text-white font-weight-bold"><%= current_user.followers.count %></p>
+          <p>Followers</p>
+        </div>
+      </div>
+    </div>
+    <ul class="list-unstyled">
+      <li>
+        <i class="fas fa-home pr-2"></i>
+        <%= link_to 'HOME', root_path %>
+      </li>
+      <li>
+        <i class="fas fa-user pr-2"></i>
+        <%= link_to 'PROFILE', user_path(current_user) %>
+      </li>
+      <li>
+        <i class="fas fa-sign-out-alt pr-2"></i>
+        <%= link_to 'SIGN OUT', logout_path, method: :delete %>
+      </li>
+    </ul>
+  </nav>
+</aside>
