@@ -1,3 +1,84 @@
-// Place all the styles related to the Reviews controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+@mixin card {
+	background-color: #fff;
+	border-radius: 5px;
+	padding: 20px;
+	margin-top: 20px;
+}
+
+.wrapper {
+	display: flex;
+	position: absolute;
+	height: 100vh;
+
+	.new-review {
+		@include card;
+
+		.btn {
+			background-color: #5aa8e4;
+			border-color: #5aa8e4;
+			color: #fff;
+
+			&:hover {
+				background-color: #559bd1;
+			}
+		}
+	}
+
+	.recent-reviews {
+		@include card;
+		padding-left: 30px;
+		padding-right: 30px;
+
+		h5 {
+			margin-bottom: 15px;
+			padding-bottom: 10px;
+			color: #5aa8e4;
+			border-bottom: 2px solid #f1f2f3;
+		}
+	}
+
+	aside {
+		border-left: 1px solid #dddddd;
+		padding: 0;
+
+		img {
+			border: 1px solid #808080;
+			border-radius: 50%;
+			width: 60px;
+			height: 60px;
+		}
+	}
+}
+
+.review-card {
+	@include card;
+	margin-top: 15%;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.review-container {
+	display: flex;
+	width: 100%;
+
+	img {
+		width: 60px;
+		height: 60px;
+		border: 1px solid #808080;
+		border-radius: 50%;
+	}
+
+	.review-links {
+		float: right;
+
+		a {
+			margin: 0 10px;
+			color: #5aa8e4;
+			text-decoration: none;
+
+			&:hover {
+				color: #4f90c2;
+			}
+		}
+	}
+}

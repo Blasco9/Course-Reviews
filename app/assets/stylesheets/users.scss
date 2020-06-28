@@ -52,6 +52,13 @@
 			color: #5aa8e4;
 			border-bottom: 2px solid #f1f2f3;
 		}
+
+		img {
+			width: 60px;
+			height: 60px;
+			border: 1px solid #808080;
+			border-radius: 50%;
+		}
 	}
 
 	aside {
@@ -135,27 +142,27 @@
 				width: 60px;
 				height: 60px;
 			}
-
-			.small-plus {
-				@include btn;
-				width: 30px;
-				height: 30px;
-				font-size: 30px;
-				line-height: 0.9;
-				padding-left: 5.5px;
-			}
-
-			.small-minus {
-				@include btn;
-				width: 30px;
-				height: 30px;
-				font-size: 40px;
-				line-height: 0.5;
-				padding-bottom: 8px;
-				padding-right: 8px;
-			}
 		}
 	}
+}
+
+.small-plus {
+	@include btn;
+	width: 30px;
+	height: 30px;
+	font-size: 30px;
+	line-height: 0.9;
+	padding-left: 5.5px;
+}
+
+.small-minus {
+	@include btn;
+	width: 30px;
+	height: 30px;
+	font-size: 40px;
+	line-height: 0.5;
+	padding-bottom: 8px;
+	padding-right: 8px;
 }
 
 .user-form {

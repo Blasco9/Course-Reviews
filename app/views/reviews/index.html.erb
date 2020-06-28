@@ -1,0 +1,29 @@
+<main class="wrapper col-10 offset-2 p-0 pt-5">
+  <section class="col-9 p-0 mt-2">
+    <%= form_for(@review, html: { class: 'new-review text-center m-4' }) do |f| %>
+    <%= f.text_field :text, class: 'form-control', placeholder: 'Add New Review' %>
+    <% if @review.errors.full_messages.any? %>
+    <p class="errors">
+      <%= "Review could not be saved. #{@review.errors.full_messages.join('. ')}" %>
+    </p>
+    <% end %>
+    <%= f.submit 'Submit', class: 'btn mt-3' %>
+    <% end %>
+
+    <section class="recent-reviews mx-4">
+      <h5>Recent reviews</h5>
+      <%= render @reviews, show_icons: true %>
+    </section>
+  </section>
+
+  <aside class="col-3 mt-2">
+    <div class="d-flex justify-content-around text-secondary border-bottom py-4">
+      <h6 class="m-0">WHO TO FOLLOW</h6>
+      <i class="fas fa-sync-alt"></i>
+    </div>
+    <% if @users.any? %>
+    <%= render @users %>
+    <% end %>
+  </aside>
+
+</main>

@@ -1,0 +1,31 @@
+<article class="review-container">
+  <div class="pr-3">
+    <img src="<%= url_for(review.author.photo) %>">
+  </div>
+  <div class="w-100">
+    <div class="d-flex w-100 justify-content-between text-secondary">
+      <div>
+        <p class="mb-0">
+          Created By
+          <%= link_to review.author.username, user_path(review.author) %>
+        </p>
+      </div>
+      <div>
+        <p class="mb-0"><span><%= time_ago_in_words(review.created_at) %> ago</span></p>
+      </div>
+    </div>
+    <p class="text-secondary">
+      <%= review.text %>
+    </p>
+    <div class="review-links">
+      <% unless show_icons.nil? %>
+      <%= link_to review_path review do %>
+      <i class="fas fa-eye"></i>
+      <% end %>
+      <% end %>
+      <%= link_to edit_review_path review do %>
+      <i class="fas fa-pen"></i>
+      <% end %>
+    </div>
+  </div>
+</article>

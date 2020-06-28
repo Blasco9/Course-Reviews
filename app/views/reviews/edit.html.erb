@@ -1,0 +1,11 @@
+<main class="wrapper col-10 offset-2 p-0 pt-5">
+  <%= form_for(@review, html: { class: 'new-review text-center m-4' }) do |f| %>
+  <%= f.text_field :text, class: 'form-control' %>
+  <% if @review.errors.full_messages.any? %>
+  <p class="errors">
+    <%= "Review could not be saved. #{@review.errors.full_messages.join('. ')}" %>
+  </p>
+  <% end %>
+  <%= f.submit 'Save Changes', class: 'btn mt-3' %>
+  <% end %>
+</main>
