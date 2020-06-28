@@ -1,0 +1,19 @@
+<div class="d-flex p-3">
+  <img src="<%= url_for user.photo %>" class="follow-photo">
+  <div class="text-left pl-3">
+    <p class="font-weight-bold mb-0">
+      <%= link_to user.full_name, user, class: 'text-reset text-decoration-none' %>
+    </p>
+    <p class="text-secondary mb-0">@<%= user.username %></p>
+  </div>
+  <% if current_user.followeds.include? user %>
+  <%= form_with(url: "/followings/#{user.id}", method: 'delete', class: 'pt-3 pl-5') do |f| %>
+  <%= f.submit '-', class: 'small-minus' %>
+  <% end %>
+  <% elsif user != current_user %>
+  <%= form_with(url: '/followings', method: 'post', class: 'pt-3 pl-5') do |f| %>
+  <%= hidden_field_tag :id, user.id %>
+  <%= f.submit '+', class: 'small-plus' %>
+  <% end %>
+  <% end %>
+</div>

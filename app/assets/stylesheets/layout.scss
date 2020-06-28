@@ -1,22 +1,24 @@
 .side-navbar {
-  float: left;
+	position: fixed;
+	top: 0;
+	left: 0;
 	background-color: #27384d;
 	color: #6f889b;
-	height: 100vh;
+	height: 100%;
 
 	.img-name-container {
 		padding: 16px;
-    border-bottom: 1.5px solid #1e2b3b;
-    
-    .nav-picture {
-      width: 35%;
-      margin-right: 10px;
-    }
+		border-bottom: 1.5px solid #1e2b3b;
+
+		.nav-picture {
+			width: 35%;
+			margin-right: 10px;
+		}
 	}
 
-  p {
-    margin: 0;
-  }
+	p {
+		margin: 0;
+	}
 
 	ul li {
 		padding: 14px 0 14px 15px;
@@ -30,36 +32,40 @@
 			color: inherit;
 			text-decoration: none;
 		}
-  }
-  
-  .nav-following-container {
-    border-right: 1px solid #1e2b3b;
-    border-bottom: 1.5px solid #1e2b3b;
-    width: 50%;
-    padding: 8px 0;
-  }
+	}
 
-  .nav-followers-container {
-    border-left: 1px solid #1e2b3b;
-    border-bottom: 1.5px solid #1e2b3b;
-    width: 50%;
-    padding: 8px 0;
-  }
+	.nav-following-container {
+		border-right: 1px solid #1e2b3b;
+		border-bottom: 1.5px solid #1e2b3b;
+		width: 50%;
+		padding: 8px 0;
+	}
+
+	.nav-followers-container {
+		border-left: 1px solid #1e2b3b;
+		border-bottom: 1.5px solid #1e2b3b;
+		width: 50%;
+		padding: 8px 0;
+	}
 }
 
 .top-navbar {
-  float: right;
-  background-color: #5aa8e4;
+	float: right;
+	background-color: #5aa8e4;
 
-  .fa-twitter {
-    padding-top: 20px;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-  }
+	.fa-twitter {
+		padding-top: 20px;
+		color: white;
+		font-size: 20px;
+		cursor: pointer;
+	}
 
-  ul i:hover {
-    cursor: pointer;
-    color: #fff;
-  }
+	ul i {
+		color: #343a40;
+
+		&:hover {
+			cursor: pointer;
+			color: #fff;
+		}
+	}
 }

@@ -1,0 +1,59 @@
+<main class="user-profile col-10 offset-2 p-0 pt-5">
+
+  <section class="col-9 p-0 mt-2">
+    <div class="cover-image"></div>
+    <section class="reviews mx-4">
+      <h5>Reviews</h5>
+      <%= render @user.reviews %>
+    </section>
+  </section>
+
+  <aside class="col-3 mt-2">
+    <div class="user-info">
+      <div class="user-photo-section">
+        <% if current_user.followeds.include? @user %>
+        <%= form_with(url: "/followings/#{@user.id}", method: 'delete') do |f| %>
+        <%= f.submit '-', class: 'minus' %>
+        <% end %>
+        <% elsif @user != current_user %>
+        <%= form_with(url: '/followings', method: 'post') do |f| %>
+        <%= hidden_field_tag :id, @user.id %>
+        <%= f.submit '+', class: 'plus' %>
+        <% end %>
+        <% end %>
+        <img src="<%= url_for @user.photo %>" class="photo">
+        <i class="fas fa-list"></i>
+      </div>
+      <div>
+        <p class="text-uppercase font-weight-bold mt-4 mb-0"><%= @user.full_name %></p>
+        <p class="text-secondary">@<%= @user.username %></p>
+      </div>
+    </div>
+    <div class="d-flex">
+      <div class="counter">
+        <p class="font-weight-bold mb-0"><%= @user.reviews.count %></p>
+        <p class="text-secondary">Reviews</p>
+      </div>
+      <div class="counter">
+        <p class="font-weight-bold mb-0"><%= @user.followeds.count %></p>
+        <p class="text-secondary">Following</p>
+      </div>
+      <div class="counter border-0">
+        <p class="font-weight-bold mb-0"><%= @user.followers.count %></p>
+        <p class="text-secondary">Followers</p>
+      </div>
+    </div>
+    <section class="followed-by">
+      <h6 class="text-secondary">FOLLOWED BY</h6>
+      <% if @user.followers.any? %>
+      <%= render @user.followers %>
+      <% end %>
+    </section>
+    <section class="following">
+      <h6 class="text-secondary">FOLLOWING</h6>
+      <% if @user.followeds.any? %>
+      <%= render @user.followeds %>
+      <% end %>
+    </section>
+  </aside>
+</main>

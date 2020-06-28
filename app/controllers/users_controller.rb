@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
   before_action :authenticate, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:edit, :update, :destroy]
+  before_action :logout, only: :new
 
   def show
     @user = User.includes(:reviews).find(params[:id])
+    @review = Review.new
   end
 
   def new
