@@ -1,9 +1,12 @@
 <main class="wrapper col-10 offset-2 p-0 pt-5">
   <section class="col-7 p-0 mt-2">
-    <div class="review-card mx-4">
+    <div class="review-card border border-dark mx-4">
       <%= render @review, show_icons: nil %>
     </div>
   </section>
   <section class="col-5 p-0 mt-2">
+    <div class="review-course">
+      <%= render @review.course %>
+    </div>
   </section>
 </main>

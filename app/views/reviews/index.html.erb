@@ -1,18 +1,23 @@
 <main class="wrapper col-10 offset-2 p-0 pt-5">
   <section class="col-9 p-0 mt-2">
-    <%= form_for(@review, html: { class: 'new-review text-center m-4' }) do |f| %>
-    <%= f.text_field :text, class: 'form-control', placeholder: 'Add New Review' %>
-    <% if @review.errors.full_messages.any? %>
-    <p class="errors">
-      <%= "Review could not be saved. #{@review.errors.full_messages.join('. ')}" %>
-    </p>
+    <% if flash[:alert] %>
+    <ul class="w-25 list-unstyled mx-auto text-danger font-weight-bold mt-2">
+      <% flash[:alert].each do |msg| %>
+      <li class="mx-auto border border-danger text-center p-2 my-1"><%= msg %></li>
+      <% end %>
+    </ul>
     <% end %>
+    <%= form_for(@review, html: { class: 'new-review text-center m-5' }) do |f| %>
+    <%= f.collection_select :course_id, @courses, :id, :name, {}, {class: 'custom-select'} %>
+    <%= f.text_area :text, class: 'form-control mt-3', placeholder: 'Add New Review' %>
     <%= f.submit 'Submit', class: 'btn mt-3' %>
     <% end %>
 
-    <section class="recent-reviews mx-4">
+    <section class="recent-reviews mx-5">
       <h5>Recent reviews</h5>
+      <% if @reviews.any? %>
       <%= render @reviews, show_icons: true %>
+      <% end %>
     </section>
   </section>
 

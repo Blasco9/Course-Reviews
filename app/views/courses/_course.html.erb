@@ -1,0 +1,9 @@
+<article class="course-card border border-dark">
+  <h5 class="text-center mb-3"><%= course.name %></h5>
+  <a href="<%= course.url %>">Link to the course</a>
+  <p class="text-secondary my-4"><%= course.description %></p>
+  <div class="d-flex justify-content-between">
+    <span class="text-secondary">By <%= course.author %></span>
+    <span class="text-secondary">Added <%= time_ago_in_words(course.created_at) %> ago</span>
+  </div>
+</article>

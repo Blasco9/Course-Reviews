@@ -1,6 +1,7 @@
 <main class="wrapper col-10 offset-2 p-0 pt-5">
-  <%= form_for(@review, html: { class: 'new-review text-center m-4' }) do |f| %>
-  <%= f.text_field :text, class: 'form-control' %>
+  <%= form_for(@review, html: { class: 'edit-review text-center border border-dark' }) do |f| %>
+  <%= f.hidden_field :course_id %>
+  <%= f.text_area :text, rows: 4, class: 'form-control' %>
   <% if @review.errors.full_messages.any? %>
   <p class="errors">
     <%= "Review could not be saved. #{@review.errors.full_messages.join('. ')}" %>

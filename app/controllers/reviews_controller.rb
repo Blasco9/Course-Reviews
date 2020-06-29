@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
     @review = Review.new
     @reviews = Review.all
     @users = current_user.users_to_follow
+    @courses = Course.all
   end
 
   def show
@@ -20,7 +21,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to root_path, notice: 'Review created successfuly'
     else
-      redirect_to root_path
+      redirect_to root_path, alert: @review.errors.full_messages
     end
   end
 
@@ -44,6 +45,6 @@ class ReviewsController < ApplicationController
     end
 
     def review_params
-      params.require(:review).permit(:text)
+      params.require(:review).permit(:text, :course_id)
     end
 end

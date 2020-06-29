@@ -10,7 +10,8 @@
 	position: absolute;
 	height: 100vh;
 
-	.new-review {
+	.new-review,
+	.edit-review {
 		@include card;
 
 		.btn {
@@ -22,6 +23,12 @@
 				background-color: #559bd1;
 			}
 		}
+	}
+
+	.edit-review {
+		width: 50%;
+		margin: 50px 0 0 200px;
+		height: 200px;
 	}
 
 	.recent-reviews {
@@ -52,7 +59,7 @@
 
 .review-card {
 	@include card;
-	margin-top: 15%;
+	margin-top: 100px;
 	padding-left: 30px;
 	padding-right: 30px;
 }
@@ -60,6 +67,7 @@
 .review-container {
 	display: flex;
 	width: 100%;
+	border-bottom: 2px solid #f1f2f3;
 
 	img {
 		width: 60px;
@@ -80,5 +88,14 @@
 				color: #4f90c2;
 			}
 		}
+	}
+}
+
+.review-course {
+	margin-top: 100px;
+
+	.course-card {
+		margin: 0 0 0 20px;
+		width: 90%;
 	}
 }

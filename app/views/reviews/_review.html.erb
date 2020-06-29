@@ -1,4 +1,4 @@
-<article class="review-container">
+<article class="review-container my-3 pb-3">
   <div class="pr-3">
     <img src="<%= url_for(review.author.photo) %>">
   </div>
@@ -23,8 +23,10 @@
       <i class="fas fa-eye"></i>
       <% end %>
       <% end %>
+      <% if current_user == review.author %>
       <%= link_to edit_review_path review do %>
       <i class="fas fa-pen"></i>
+      <% end %>
       <% end %>
     </div>
   </div>
