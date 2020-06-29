@@ -8,13 +8,13 @@ class SessionsController < ApplicationController
       login @user
       redirect_to @user, notice: 'Logged in successfuly'
     else
-      render :new, notice: 'Invalid user name'
+      redirect_to login_path, alert: 'Invalid username'
     end
   end
 
   def destroy
     logout
-    redirect_to root_path, notice: 'You logged out'
+    redirect_to login_path, notice: 'You logged out'
   end
 
   private

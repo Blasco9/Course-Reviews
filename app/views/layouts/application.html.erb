@@ -18,6 +18,13 @@
   <% else %>
   <%= render 'layouts/unlogged_layout' %>
   <% end %>
+
+  <% if flash[:notice] %>
+  <div class="flash">
+    <%= flash[:notice] %>
+  </div>
+  <% end %>
+
   <%= yield %>
 </body>
 

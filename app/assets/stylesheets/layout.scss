@@ -1,3 +1,14 @@
+.flash {
+	position: absolute;
+	top: 56px;
+	left: 45%;
+	padding: 7px 10px;
+	background-color: #8ac0e9;
+	border-radius: 10px;
+	color: #fff;
+	z-index: 1000;
+}
+
 .side-navbar {
 	position: fixed;
 	top: 0;
@@ -73,6 +84,7 @@
 
 .unlogged-nav {
 	background-color: #5aa8e4;
+	height: 56px;
 
 	a {
 		color: #fff;
