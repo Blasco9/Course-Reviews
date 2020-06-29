@@ -9,10 +9,10 @@ class FollowingsController < ApplicationController
   end
 
   def destroy
-    user = User.find(params[:id])
-    current_user.followeds.delete(user)
+    @user = User.find(params[:id])
+    current_user.followeds.delete(@user)
     respond_to do |format|
-      format.html { redirect_to root_path }
+      format.html { redirect_to current_user }
       format.js
     end
   end

@@ -7,11 +7,11 @@
     <p class="text-secondary mb-0">@<%= user.username %></p>
   </div>
   <% if current_user.followeds.include? user %>
-  <%= form_with(url: "/followings/#{user.id}", method: 'delete', class: 'pt-3 pr-3') do |f| %>
+  <%= form_with(url: "/followings/#{user.id}", method: 'delete', local: true, class: 'pt-3 pr-3') do |f| %>
   <%= f.submit '-', class: 'small-minus' %>
   <% end %>
   <% elsif user != current_user %>
-  <%= form_with(url: '/followings', method: 'post', class: 'pt-3 pr-5') do |f| %>
+  <%= form_with(url: '/followings', method: 'post', local: true, class: 'pt-3 pr-3') do |f| %>
   <%= hidden_field_tag :id, user.id %>
   <%= f.submit '+', class: 'small-plus' %>
   <% end %>
