@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   after_create :attach_default_img
   has_many :reviews, foreign_key: :author_id, dependent: :destroy
+  has_many :comments, foreign_key: :author_id, dependent: :destroy
   has_many :followings, foreign_key: :followed_id, dependent: :destroy
   has_many :inverse_followings, class_name: 'Following', foreign_key: :follower_id, dependent: :destroy
   has_many :followers, through: :followings

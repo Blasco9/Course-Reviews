@@ -11,6 +11,7 @@ RSpec.describe User, type: :model do
 
   context 'Associations' do
     it { should have_many(:reviews) }
+    it { should have_many(:comments) }
     it { should have_many(:followings) }
     it { should have_many(:inverse_followings) }
     it { should have_many(:followers) }
