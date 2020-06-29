@@ -11,7 +11,8 @@
 	height: 100vh;
 
 	.new-review,
-	.edit-review {
+	.edit-review,
+	.comment-form {
 		@include card;
 
 		.btn {
@@ -97,5 +98,13 @@
 	.course-card {
 		margin: 0 0 0 20px;
 		width: 90%;
+	}
+}
+
+#delete-icon {
+	color: rgb(199, 58, 58);
+
+	&:hover {
+		color: rgb(160, 43, 43);
 	}
 }

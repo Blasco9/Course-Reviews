@@ -1,0 +1,12 @@
+<div class="text-secondary border mx-5 p-2">
+  <div class="d-flex justify-content-between">
+    <%= link_to comment.author.username, comment.author %>
+    <span><%= time_ago_in_words(comment.created_at) %> ago</span>
+  </div>
+  <div class="d-flex align-items-center mt-3">
+    <p class="col-11 mb-0"><%= comment.text %></p>
+    <%= link_to comment_path(comment), method: :delete, class: 'col-1' do %>
+    <i id="delete-icon" class="far fa-trash-alt"></i>
+    <% end %>
+  </div>
+</div>

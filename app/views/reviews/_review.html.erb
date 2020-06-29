@@ -3,7 +3,7 @@
     <img src="<%= url_for(review.author.photo) %>">
   </div>
   <div class="w-100">
-    <div class="d-flex w-100 justify-content-between text-secondary">
+    <div class="d-flex w-100 justify-content-between text-secondary mb-3">
       <div>
         <p class="mb-0">
           Created By
@@ -26,6 +26,9 @@
       <% if current_user == review.author %>
       <%= link_to edit_review_path review do %>
       <i class="fas fa-pen"></i>
+      <% end %>
+      <%= link_to review_path review, method: :delete do %>
+      <i id="delete-icon" class="far fa-trash-alt"></i>
       <% end %>
       <% end %>
     </div>
