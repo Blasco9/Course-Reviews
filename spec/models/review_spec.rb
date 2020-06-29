@@ -7,5 +7,6 @@ RSpec.describe Review, type: :model do
 
   context 'Associations' do
     it { should belong_to(:author) }
+    it { should belong_to(:course) }
   end
 end
