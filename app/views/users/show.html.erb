@@ -12,7 +12,7 @@
     <div class="user-info">
       <div class="user-photo-section">
         <% if current_user.followeds.include? @user %>
-        <%= form_with(url: "/followings/#{@user.id}", method: 'delete') do |f| %>
+        <%= form_with(url: "/followings/#{@user.id}", method: 'delete', local: true) do |f| %>
         <%= f.submit '-', class: 'minus' %>
         <% end %>
         <% elsif @user != current_user %>

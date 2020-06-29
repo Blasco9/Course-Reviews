@@ -1,5 +1,5 @@
-<%= form_with url: '/login', method: 'post', local: true, html: { class: 'w-25 mx-auto text-center border p-3 mt-5' } do %>
+<%= form_with url: '/login', method: 'post', local: true, html: { class: 'user-form' } do %>
 <%= label_tag "user[username]", 'Username' %>
 <%= text_field_tag "user[username]", nil, class: 'form-control mb-3' %>
-<%= submit_tag 'Log In', class: 'btn btn-primary' %>
+<%= submit_tag 'Log In', class: 'btn' %>
 <% end %>

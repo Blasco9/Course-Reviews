@@ -54,11 +54,11 @@
 	background-color: #5aa8e4;
 	z-index: 1000;
 
-	.fa-twitter {
-		padding-top: 20px;
+	.logo {
+		padding-left: 30px;
 		color: white;
-		font-size: 20px;
-		cursor: pointer;
+		font-size: 30px;
+		font-weight: bold;
 	}
 
 	ul i {
@@ -69,4 +69,29 @@
 			color: #fff;
 		}
 	}
+}
+
+.unlogged-nav {
+	background-color: #5aa8e4;
+
+	a {
+		color: #fff;
+		text-decoration: none;
+		font-weight: bold;
+		margin: 0 50px;
+
+		&:hover {
+			color: rgb(223, 219, 219);
+		}
+	}
+}
+
+.welcome {
+	color: #5aa8e4;
+	width: 50%;
+	margin: 40px auto;
+	text-align: center;
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 10px 0;
 }

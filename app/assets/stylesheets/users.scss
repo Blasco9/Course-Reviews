@@ -172,7 +172,12 @@
 	border: 1px solid #808080;
 	padding: 20px;
 	background-color: #fff;
-	margin: 150px auto;
+	margin: 50px auto;
+
+	h3 {
+		color: #5aa8e4;
+		text-align: center;
+	}
 
 	.label-input-container {
 		display: flex;
