@@ -27,7 +27,7 @@
       <%= link_to edit_review_path review do %>
       <i class="fas fa-pen"></i>
       <% end %>
-      <%= link_to review_path review, method: :delete do %>
+      <%= link_to review_path(review), method: :delete do %>
       <i id="delete-icon" class="far fa-trash-alt"></i>
       <% end %>
       <% end %>

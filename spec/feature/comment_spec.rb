@@ -25,7 +25,7 @@ RSpec.describe 'Creating and deleting a comment', type: :feature do
     expect(page).to have_content("Text can't be blank")
   end
 
-  scenario 'delete comment' do
+  scenario 'comment deletion' do
     comment = user.comments.create(text: 'Comment text', review_id: review.id)
     visit login_path
     fill_in 'Username', with: user.username

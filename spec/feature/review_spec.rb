@@ -1,7 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe 'Creating and updating review', type: :feature do
+RSpec.describe 'Creating, updating and deleting review', type: :feature do
   let(:user) { User.create(username: 'User', full_name: 'User name') }
+  let(:course) { Course.create(name: 'Course', url: 'course.com', description: 'text', author: 'me') }
 
   scenario 'valid creation' do
     Course.create(name: 'Course', url: 'course.com', description: 'text', author: 'me')
@@ -47,5 +48,15 @@ RSpec.describe 'Creating and updating review', type: :feature do
     fill_in 'review[text]', with: ''
     click_on 'Save Changes'
     expect(page).to have_content("Review could not be saved. Text can't be blank")
+  end
+
+  scenario 'review deletion' do
+    review = user.reviews.create(text: 'Comment text', course_id: course.id)
+    visit login_path
+    fill_in 'Username', with: user.username
+    click_on 'Log In'
+    visit review_path review
+    find("a[href='#{review_path review}']").click
+    expect(page).to have_content("Review deleted successfuly")
   end
 end
