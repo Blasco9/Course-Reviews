@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to @comment.review, notice: 'You commented on the review'
     else
-      redirect_to root_path, alert: @comment.errors.full_messages
+      redirect_to @comment.review, alert: @comment.errors.full_messages.first
     end
   end
 

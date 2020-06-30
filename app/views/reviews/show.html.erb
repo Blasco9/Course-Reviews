@@ -7,6 +7,11 @@
       <% end %>
       <div class="comment-form mx-5 text-center">
         <%= form_for(Comment.new) do |f| %>
+        <% if flash[:alert] %>
+        <div class="text-danger">
+          <%= flash[:alert] %>
+        </div>
+        <% end %>
         <%= f.hidden_field :review_id, value: @review.id %>
         <%= f.text_area :text, class: 'form-control', placeholder: 'Leave a comment' %>
         <%= f.submit 'Submit', class: 'btn mt-3' %>
