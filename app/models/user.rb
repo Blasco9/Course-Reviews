@@ -19,12 +19,16 @@ class User < ApplicationRecord
     end
   end
 
+  # rubocop: disable Style/GuardClause
   def attach_default_img
-    if !photo.attached?
-      photo.attach(io: File.open('app/assets/images/user_img.png'), filename: 'user_img.png', content_type: 'image/png')
+    unless photo.attached?
+      photo.attach(io: File.open('app/assets/images/user_img.png'),
+                   filename: 'user_img.png', content_type: 'image/png')
     end
-    if !cover_image.attached?
-      cover_image.attach(io: File.open('app/assets/images/cover_img.jpg'), filename: 'cover_img.jpg', content_type: 'image/jpg')
+    unless cover_image.attached?
+      cover_image.attach(io: File.open('app/assets/images/cover_img.jpg'),
+                         filename: 'cover_img.jpg', content_type: 'image/jpg')
     end
   end
+  # rubocop: enable Style/GuardClause
 end

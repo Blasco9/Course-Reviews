@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ReviewsController < ApplicationController
   before_action :authenticate, only: %i[index show edit update destroy]
   before_action :set_review, only: %i[edit update destroy]

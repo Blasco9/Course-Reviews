@@ -13,7 +13,7 @@ RSpec.describe 'Creating a course', type: :feature do
     fill_in 'Description', with: 'Course description'
     fill_in 'Author', with: 'Someone'
     click_on 'Create Course'
-    expect(page).to have_content("Course created successfuly")
+    expect(page).to have_content('Course created successfuly')
   end
 
   scenario 'invalid creation' do

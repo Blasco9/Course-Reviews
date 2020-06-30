@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Creating and updating user', type: :feature do
-
   scenario 'valid creation' do
     visit signup_path
     fill_in 'Username', with: 'User'
@@ -25,7 +24,7 @@ RSpec.describe 'Creating and updating user', type: :feature do
     find("a[href='#{edit_user_path @user}']").click
     fill_in 'Full name', with: 'New User name'
     click_on 'Save'
-    expect(page).to have_content("User updated successfuly")
+    expect(page).to have_content('User updated successfuly')
   end
 
   scenario 'invalid update' do

@@ -12,7 +12,7 @@ RSpec.describe 'Creating, updating and deleting review', type: :feature do
     visit root_path
     fill_in placeholder: 'Add New Review', with: 'Review text'
     click_on 'Submit'
-    expect(page).to have_content("Review created successfuly")
+    expect(page).to have_content('Review created successfuly')
   end
 
   scenario 'invalid creation' do
@@ -22,7 +22,7 @@ RSpec.describe 'Creating, updating and deleting review', type: :feature do
     visit root_path
     fill_in placeholder: 'Add New Review', with: ''
     click_on 'Submit'
-    expect(page).to have_content("Course must exist")
+    expect(page).to have_content('Course must exist')
     expect(page).to have_content("Text can't be blank")
   end
 
@@ -35,7 +35,7 @@ RSpec.describe 'Creating, updating and deleting review', type: :feature do
     find("a[href='#{edit_review_path review}']").click
     fill_in 'review[text]', with: 'Expanded review text'
     click_on 'Save Changes'
-    expect(page).to have_content("Review updated successfuly")
+    expect(page).to have_content('Review updated successfuly')
   end
 
   scenario 'invalid update' do
@@ -57,6 +57,6 @@ RSpec.describe 'Creating, updating and deleting review', type: :feature do
     click_on 'Log In'
     visit review_path review
     find("a[href='#{review_path review}']").click
-    expect(page).to have_content("Review deleted successfuly")
+    expect(page).to have_content('Review deleted successfuly')
   end
 end

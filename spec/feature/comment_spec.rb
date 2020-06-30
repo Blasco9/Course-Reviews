@@ -12,7 +12,7 @@ RSpec.describe 'Creating and deleting a comment', type: :feature do
     visit review_path review
     fill_in 'comment[text]', with: 'Comment text'
     click_on 'Submit'
-    expect(page).to have_content("You commented on the review")
+    expect(page).to have_content('You commented on the review')
   end
 
   scenario 'invalid creation' do
@@ -32,6 +32,6 @@ RSpec.describe 'Creating and deleting a comment', type: :feature do
     click_on 'Log In'
     visit review_path review
     find("a[href='#{comment_path comment}']").click
-    expect(page).to have_content("Comment deleted successfuly")
+    expect(page).to have_content('Comment deleted successfuly')
   end
 end
