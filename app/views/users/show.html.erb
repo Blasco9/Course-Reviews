@@ -1,7 +1,8 @@
 <main class="user-profile col-10 offset-2 p-0 pt-5">
 
   <section class="col-9 p-0 mt-2">
-    <div class="cover-image"></div>
+    <div class="cover-image" style="background-image: url('<%= url_for @user.cover_image %>')">
+    </div>
     <section class="reviews mx-4">
       <h5>Reviews</h5>
       <%= render @user.reviews, show_icons: true %>
