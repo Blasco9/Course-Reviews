@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
-  before_action :authenticate, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:edit, :update, :destroy]
+  before_action :authenticate, only: %i[show edit update destroy]
+  before_action :set_user, only: %i[edit update destroy]
   before_action :logout, only: :new
 
   def show
-    @user = User.includes(:reviews).find(params[:id])
+    @user = User.includes(:photo_attachment, { reviews: { author: { photo_attachment: :blob } } }, followeds: { photo_attachment: :blob }, followers: { photo_attachment: :blob }).find(params[:id])
     @review = Review.new
   end
 
@@ -12,8 +14,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @user = User.new(user_params)
@@ -40,12 +41,12 @@ class UsersController < ApplicationController
   end
 
   private
-    
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    def user_params
-      params.require(:user).permit(:username, :full_name, :photo, :cover_image)
-    end
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(:username, :full_name, :photo, :cover_image)
+  end
 end
