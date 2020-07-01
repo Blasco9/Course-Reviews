@@ -19,7 +19,7 @@ You can create a user with profile and cover photos, create courses, reviews, co
 
 ## Live Demo
 
-[Live Demo Link](https://quiet-ocean-76923.herokuapp.com/)
+[Live Demo Link](https://quiet-ocean-76923.herokuapp.com)
 
 
 ## Getting Started
