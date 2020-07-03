@@ -1,5 +1,4 @@
 <main class="user-profile col-10 offset-2 p-0 pt-5">
-
   <section class="col-9 p-0 mt-2">
     <div class="cover-image" style="background-image: url('<%= url_for @user.cover_image %>')">
     </div>
@@ -22,7 +21,7 @@
         <%= f.submit '+', class: 'plus' %>
         <% end %>
         <% end %>
-        <img src="<%= url_for @user.photo %>" class="photo">
+        <div class="photo" style="background-image: url('<%= url_for @user.photo %>')"></div>
         <i class="fas fa-list"></i>
       </div>
       <div>

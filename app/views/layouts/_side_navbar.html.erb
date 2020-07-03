@@ -2,8 +2,8 @@
   <nav>
     <div>
       <div class="img-name-container">
-        <img src="<%= url_for current_user.photo %>" class="nav-picture">
-        <span class="text-uppercase"><%= current_user.full_name %></span>
+        <div class="nav-picture" style="background-image: url('<%= url_for current_user.photo %>')"></div>
+        <span class="text-uppercase pt-4 pl-2"><%= current_user.full_name %></span>
       </div>
       <div class="d-flex text-center">
         <div class="nav-following-container">

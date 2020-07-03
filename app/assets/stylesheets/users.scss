@@ -1,208 +1,214 @@
 @mixin card {
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 20px;
-  margin-top: 20px;
+	background-color: #fff;
+	border-radius: 5px;
+	padding: 20px;
+	margin-top: 20px;
 }
 
 @mixin btn {
-  width: 40px;
-  height: 40px;
-  font-weight: bold;
-  background-color: #fff;
-  color: #808080;
-  border: 1px solid #808080;
-  border-radius: 50%;
-  outline: none;
-  font-family: sans-serif;
+	width: 40px;
+	height: 40px;
+	font-weight: bold;
+	background-color: #fff;
+	color: #808080;
+	border: 1px solid #808080;
+	border-radius: 50%;
+	outline: none;
+	font-family: sans-serif;
 
-  &:hover {
-    color: #fff;
-    background-color: #808080;
-    cursor: pointer;
-  }
+	&:hover {
+		color: #fff;
+		background-color: #808080;
+		cursor: pointer;
+	}
 }
 
 .user-profile {
-  display: flex;
-  position: absolute;
-  height: 100vh;
+	display: flex;
+	position: absolute;
+	height: 100vh;
 
-  .cover-image {
-    height: 250px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
+	.cover-image {
+		height: 250px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
 
-  .reviews {
-    @include card;
+	.reviews {
+		@include card;
 
-    padding-left: 30px;
-    padding-right: 30px;
+		padding-left: 30px;
+		padding-right: 30px;
 
-    h5 {
-      margin-bottom: 15px;
-      padding-bottom: 10px;
-      color: #5aa8e4;
-      border-bottom: 2px solid #f1f2f3;
-    }
+		h5 {
+			margin-bottom: 15px;
+			padding-bottom: 10px;
+			color: #5aa8e4;
+			border-bottom: 2px solid #f1f2f3;
+		}
 
-    img {
-      width: 60px;
-      height: 60px;
-      border: 1px solid #808080;
-      border-radius: 50%;
-    }
-  }
+		img {
+			width: 60px;
+			height: 60px;
+			border: 1px solid #808080;
+			border-radius: 50%;
+		}
+	}
 
-  aside {
-    border-left: 1px solid #ddd;
-    text-align: center;
-    padding: 0;
+	aside {
+		border-left: 1px solid #ddd;
+		text-align: center;
+		padding: 0;
 
-    .user-info {
-      border-bottom: 2px solid #ddd;
-      padding-top: 20px;
+		.user-info {
+			border-bottom: 2px solid #ddd;
+			padding-top: 20px;
 
-      .user-photo-section {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+			.user-photo-section {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
 
-        .photo {
-          grid-column: 2 / 3;
-          border: 1px solid #808080;
-          border-radius: 50%;
-          width: 100px;
-          height: 100px;
-          margin: 0 20px;
-        }
+				.photo {
+					grid-column: 2 / 3;
+					border: 1px solid #808080;
+					border-radius: 50%;
+					width: 100px;
+					height: 100px;
+					margin: 0 20px;
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-position: center;
+				}
 
-        form {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
+				form {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
 
-        .plus {
-          @include btn;
+				.plus {
+					@include btn;
 
-          font-size: 40px;
-          line-height: 0.9;
-        }
+					font-size: 40px;
+					line-height: 0.9;
+				}
 
-        .minus {
-          @include btn;
+				.minus {
+					@include btn;
 
-          font-size: 45px;
-          line-height: 0.5;
-          padding-bottom: 8px;
-          padding-right: 9px;
-        }
+					font-size: 45px;
+					line-height: 0.5;
+					padding-bottom: 8px;
+					padding-right: 9px;
+				}
 
-        i {
-          grid-column: 3 / 4;
-          align-self: center;
-          justify-self: center;
-          width: 40px;
-          height: 40px;
-          color: #808080;
-          border: 1px solid #808080;
-          background-color: #fff;
-          border-radius: 50%;
-          padding: 7px 8px 7px 6px;
-          font-size: 24px;
-        }
-      }
-    }
+				i {
+					grid-column: 3 / 4;
+					align-self: center;
+					justify-self: center;
+					width: 40px;
+					height: 40px;
+					color: #808080;
+					border: 1px solid #808080;
+					background-color: #fff;
+					border-radius: 50%;
+					padding: 7px 8px 7px 6px;
+					font-size: 24px;
+				}
+			}
+		}
 
-    .counter {
-      width: 33.33%;
-      border-right: 2px solid #ddd;
-      padding-top: 10px;
-    }
+		.counter {
+			width: 33.33%;
+			border-right: 2px solid #ddd;
+			padding-top: 10px;
+		}
 
-    .followed-by,
-    .following {
-      border-top: 2px solid #ddd;
-      padding-top: 15px;
+		.followed-by,
+		.following {
+			border-top: 2px solid #ddd;
+			padding-top: 15px;
 
-      h6 {
-        margin: 0 5px;
-        padding-bottom: 15px;
-        border-bottom: 2px solid #ddd;
-      }
+			h6 {
+				margin: 0 5px;
+				padding-bottom: 15px;
+				border-bottom: 2px solid #ddd;
+			}
+		}
+	}
+}
 
-      .follow-photo {
-        border: 1px solid #808080;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-      }
-    }
-  }
+.follow-photo {
+	border: 1px solid #808080;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 }
 
 .small-plus {
-  @include btn;
+	@include btn;
 
-  width: 30px;
-  height: 30px;
-  font-size: 30px;
-  line-height: 0.9;
-  padding-left: 5.5px;
+	width: 30px;
+	height: 30px;
+	font-size: 30px;
+	line-height: 0.9;
+	padding-left: 5.5px;
 }
 
 .small-minus {
-  @include btn;
+	@include btn;
 
-  width: 30px;
-  height: 30px;
-  font-size: 40px;
-  line-height: 0.5;
-  padding-bottom: 8px;
-  padding-right: 8px;
+	width: 30px;
+	height: 30px;
+	font-size: 40px;
+	line-height: 0.5;
+	padding-bottom: 8px;
+	padding-right: 8px;
 }
 
 .user-form {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #808080;
-  padding: 20px;
-  background-color: #fff;
-  margin: 50px auto;
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #808080;
+	padding: 20px;
+	background-color: #fff;
+	margin: 50px auto;
 
-  h3 {
-    color: #5aa8e4;
-    text-align: center;
-  }
+	h3 {
+		color: #5aa8e4;
+		text-align: center;
+	}
 
-  .label-input-container {
-    display: flex;
-    height: 270px;
-  }
+	.label-input-container {
+		display: flex;
+		height: 270px;
+	}
 
-  .btn {
-    background-color: #5aa8e4;
-    border-color: #5aa8e4;
-    color: #fff;
+	.btn {
+		background-color: #5aa8e4;
+		border-color: #5aa8e4;
+		color: #fff;
 
-    &:hover {
-      background-color: #559bd1;
-    }
-  }
+		&:hover {
+			background-color: #559bd1;
+		}
+	}
 }
 
 .edit-user-wrapper {
-  float: right;
+	float: right;
 
-  .user-form {
-    width: 50%;
-    margin: 80px 0 0 200px;
+	.user-form {
+		width: 50%;
+		margin: 80px 0 0 200px;
 
-    .label-input-container {
-      height: 200px;
-    }
-  }
+		.label-input-container {
+			height: 200px;
+		}
+	}
 }
