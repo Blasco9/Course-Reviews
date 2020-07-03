@@ -17,7 +17,7 @@
         <%= f.submit '-', class: 'minus' %>
         <% end %>
         <% elsif @user != current_user %>
-        <%= form_with(url: '/followings', method: 'post') do |f| %>
+        <%= form_with(url: '/followings', method: 'post', local: true) do |f| %>
         <%= hidden_field_tag :id, @user.id %>
         <%= f.submit '+', class: 'plus' %>
         <% end %>
