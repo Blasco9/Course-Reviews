@@ -1,115 +1,115 @@
 @mixin card {
-	background-color: #fff;
-	border-radius: 5px;
-	padding: 20px;
-	margin-top: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
 }
 
 .review-container {
-	display: flex;
-	width: 100%;
-	border-bottom: 2px solid #f1f2f3;
+  display: flex;
+  width: 100%;
+  border-bottom: 2px solid #f1f2f3;
 
-	.review-photo {
-		width: 60px;
-		height: 60px;
-		border: 1px solid #808080;
-		border-radius: 50%;
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center;
-	}
+  .review-photo {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #808080;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
 
-	.review-links {
-		float: right;
+  .review-links {
+    float: right;
 
-		a {
-			margin: 0 10px;
-			color: #5aa8e4;
-			text-decoration: none;
+    a {
+      margin: 0 10px;
+      color: #5aa8e4;
+      text-decoration: none;
 
-			&:hover {
-				color: #4f90c2;
-			}
-		}
-	}
+      &:hover {
+        color: #4f90c2;
+      }
+    }
+  }
 }
 
 .wrapper {
-	display: flex;
-	position: absolute;
-	height: 100vh;
+  display: flex;
+  position: absolute;
+  height: 100vh;
 
-	.new-review,
-	.edit-review,
-	.comment-form {
-		@include card;
+  .new-review,
+  .edit-review,
+  .comment-form {
+    @include card;
 
-		.btn {
-			background-color: #5aa8e4;
-			border-color: #5aa8e4;
-			color: #fff;
+    .btn {
+      background-color: #5aa8e4;
+      border-color: #5aa8e4;
+      color: #fff;
 
-			&:hover {
-				background-color: #559bd1;
-			}
-		}
-	}
+      &:hover {
+        background-color: #559bd1;
+      }
+    }
+  }
 
-	.edit-review {
-		width: 50%;
-		margin: 50px 0 0 200px;
-		height: 200px;
-	}
+  .edit-review {
+    width: 50%;
+    margin: 50px 0 0 200px;
+    height: 200px;
+  }
 
-	.recent-reviews {
-		@include card;
+  .recent-reviews {
+    @include card;
 
-		padding-left: 30px;
-		padding-right: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
 
-		h5 {
-			margin-bottom: 15px;
-			padding-bottom: 10px;
-			color: #5aa8e4;
-			border-bottom: 2px solid #f1f2f3;
-		}
-	}
+    h5 {
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      color: #5aa8e4;
+      border-bottom: 2px solid #f1f2f3;
+    }
+  }
 
-	aside {
-		border-left: 1px solid #ddd;
-		padding: 0;
+  aside {
+    border-left: 1px solid #ddd;
+    padding: 0;
 
-		img {
-			border: 1px solid #808080;
-			border-radius: 50%;
-			width: 60px;
-			height: 60px;
-		}
-	}
+    img {
+      border: 1px solid #808080;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+    }
+  }
 }
 
 .review-card {
-	@include card;
+  @include card;
 
-	margin-top: 100px;
-	padding-left: 30px;
-	padding-right: 30px;
+  margin-top: 100px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .review-course {
-	margin-top: 100px;
+  margin-top: 100px;
 
-	.course-card {
-		margin: 0 0 0 20px;
-		width: 90%;
-	}
+  .course-card {
+    margin: 0 0 0 20px;
+    width: 90%;
+  }
 }
 
 #delete-icon {
-	color: rgb(199, 58, 58);
+  color: rgb(199, 58, 58);
 
-	&:hover {
-		color: rgb(160, 43, 43);
-	}
+  &:hover {
+    color: rgb(160, 43, 43);
+  }
 }
