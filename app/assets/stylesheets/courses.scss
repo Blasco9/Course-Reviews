@@ -1,0 +1,56 @@
+@mixin card {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.course-form {
+  @include card;
+
+  height: 350px;
+  width: 600px;
+  margin-left: 200px;
+  border: 1px solid #808080;
+
+  .label-input-container {
+    display: flex;
+    height: 90%;
+  }
+
+  .btn {
+    background-color: #5aa8e4;
+    border-color: #5aa8e4;
+    color: #fff;
+
+    &:hover {
+      background-color: #559bd1;
+    }
+  }
+}
+
+.course-card {
+  @include card;
+
+  width: 60%;
+  margin-left: 200px;
+  margin-top: 50px;
+
+  h5 {
+    color: #5aa8e4;
+  }
+
+  p {
+    line-height: 2;
+  }
+}
+
+.no-courses {
+  margin-top: 50px;
+  margin-left: 200px;
+
+  a {
+    color: #5aa8e4;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,10 @@
+<main class="wrapper col-10 offset-2 p-0 pt-5">
+  <% if @courses.empty? %>
+  <h3 class="no-courses">There are no courses yet.
+    <%= link_to 'Add one!', new_course_path %>
+  </h3>
+  <% end %>
+  <section>
+    <%= render @courses %>
+  </section>
+</main>

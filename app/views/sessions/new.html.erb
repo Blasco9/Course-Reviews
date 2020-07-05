@@ -1,0 +1,10 @@
+<%= form_with url: '/login', method: 'post', local: true, html: { class: 'user-form' } do %>
+<% if flash[:alert] %>
+<div class="text-danger">
+  <%= flash[:alert] %>
+</div>
+<% end %>
+<%= label_tag "user[username]", 'Username' %>
+<%= text_field_tag "user[username]", nil, class: 'form-control mb-3' %>
+<%= submit_tag 'Log In', class: 'btn' %>
+<% end %>

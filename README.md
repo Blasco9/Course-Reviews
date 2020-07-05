@@ -1,61 +1,70 @@
-# Project Name
+# Course Reviews
 
-> One paragraph statement about the project.
+> Website to share reviews and experiences about online courses.
 
-![screenshot](./app_screenshot.png)
+You can create a user with profile and cover photos, create courses, reviews, comments and follow other users
 
-Additional description about the project and its features.
+![screenshot1](app/assets/images/Screenshot1.bmp)
+![screenshot2](app/assets/images/Screenshot2.bmp)
+![screenshot3](app/assets/images/Screenshot3.bmp)
+![screenshot4](app/assets/images/Screenshot4.bmp)
 
 ## Built With
 
-- Major languages,
-- frameworks,
-- technologies used
+- Ruby v2.7.0
+- Rails 6.0.3.2
+- Bootstrap
+- PostgreSQL
+- Coludinary
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://quiet-ocean-76923.herokuapp.com)
 
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+- Ruby: 2.7.0
+- Rails: 6.0.3.2
+- Postgres: >=9.5
+
 ### Setup
 
-### Install
+Instal gems with:
+
+`bundle install`
+
+Setup database with:
+
+`rails db:create
+   rails db:migrate`
 
 ### Usage
 
+Start server with:
+
+`rails server`
+
+Open http://localhost:3000/ in your browser.
+
 ### Run tests
 
-### Deployment
-
-
+`rpsec --format documentation`
 
 ## Authors
 
-👤 **Author1**
+👤 **Author**
 
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
-
-👤 **Author2**
-
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
+- Github: [@Blasco9](https://github.com/Blasco9)
+- Linkedin: [Julian Blasco](https://www.linkedin.com/in/julian-augusto-blasco-1656a0153/)
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!
+Contributions, issues and feature requests are welcome
 
 Feel free to check the [issues page](issues/).
 
@@ -65,9 +74,9 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Design Gregoire Vella
+- The Odin Project
+- Microverse
 
 ## 📝 License
 

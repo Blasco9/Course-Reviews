@@ -1,0 +1,27 @@
+<main class="wrapper col-10 offset-2 p-0 pt-5">
+  <section class="col-7 p-0 mt-2">
+    <div class="review-card border border-dark mx-4">
+      <%= render @review, show_icons: nil %>
+      <% if @review.comments.any? %>
+      <%= render @review.comments %>
+      <% end %>
+      <div class="comment-form mx-5 text-center">
+        <%= form_for(Comment.new) do |f| %>
+        <% if flash[:alert] %>
+        <div class="text-danger">
+          <%= flash[:alert] %>
+        </div>
+        <% end %>
+        <%= f.hidden_field :review_id, value: @review.id %>
+        <%= f.text_area :text, class: 'form-control', placeholder: 'Leave a comment' %>
+        <%= f.submit 'Submit', class: 'btn mt-3' %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+  <section class="col-5 p-0 mt-2">
+    <div class="review-course">
+      <%= render @review.course %>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,26 @@
+<% if @user.errors.any? %>
+<ul class="w-25 list-unstyled mx-auto text-danger font-weight-bold mt-2">
+  <% @user.errors.full_messages.each do |msg| %>
+  <li class="mx-auto border border-danger text-center p-2 my-1"><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_with model: @user, local: true, html: { class: 'user-form' } do |f| %>
+<h3>Register</h3>
+<div class="label-input-container">
+  <div class="col-3 d-flex flex-column justify-content-around pr-0">
+    <%= f.label :username, class: 'mb-0' %>
+    <%= f.label :full_name, class: 'mb-0' %>
+    <%= f.label :photo, class: 'mb-0' %>
+    <%= f.label :cover_image, class: 'mb-0' %>
+  </div>
+  <div class="col-9 d-flex flex-column justify-content-around pl-0">
+    <%= f.text_field :username, class: 'form-control' %>
+    <%= f.text_field :full_name, class: 'form-control' %>
+    <%= f.file_field :photo, direct_upload: true, class: 'form-control-file' %>
+    <%= f.file_field :cover_image, direct_upload: true, class: 'form-control-file' %>
+  </div>
+</div>
+<%= f.submit 'Create User', class: 'btn' %>
+<% end %>

@@ -1,0 +1,29 @@
+<main class="wrapper col-10 offset-2 p-0 pt-5">
+  <section class="col-10 p-0 mt-2">
+    <% if @course.errors.any? %>
+    <ul class="w-25 list-unstyled mx-auto text-danger font-weight-bold mt-2">
+      <% @course.errors.full_messages.each do |msg| %>
+      <li class="mx-auto border border-danger text-center p-2 my-1"><%= msg %></li>
+      <% end %>
+    </ul>
+    <% end %>
+
+    <%= form_with model: @course, local: true, html: { class: 'course-form' } do |f| %>
+    <div class="label-input-container">
+      <div class="col-3 d-flex flex-column justify-content-around pr-0">
+        <%= f.label :name, class: 'mb-0' %>
+        <%= f.label :url, class: 'mb-0' %>
+        <%= f.label :description, class: 'mb-0' %>
+        <%= f.label :author, class: 'mb-0' %>
+      </div>
+      <div class="col-9 d-flex flex-column justify-content-around pl-0">
+        <%= f.text_field :name, class: 'form-control' %>
+        <%= f.text_field :url, class: 'form-control' %>
+        <%= f.text_area :description, class: 'form-control' %>
+        <%= f.text_field :author, class: 'form-control' %>
+      </div>
+    </div>
+    <%= f.submit 'Create Course', class: 'btn form-control' %>
+    <% end %>
+  </section>
+</main>
