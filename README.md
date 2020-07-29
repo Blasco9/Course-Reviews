@@ -60,7 +60,7 @@ Open http://localhost:3000/ in your browser.
 👤 **Author**
 
 - Github: [@Blasco9](https://github.com/Blasco9)
-- Linkedin: [Julian Blasco](https://www.linkedin.com/in/julian-augusto-blasco-1656a0153/)
+- Linkedin: [Julian Blasco](https://www.linkedin.com/in/julian-blasco/)
 
 ## 🤝 Contributing
 
